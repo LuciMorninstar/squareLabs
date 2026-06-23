@@ -1,0 +1,83 @@
+/* Sora font */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Italianno&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Metrophobic&family=Neonderthaw&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Outfit font */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Italianno&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Metrophobic&family=Neonderthaw&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+@import "tailwindcss";
+
+
+body{
+  @apply bg-background-color text-black font-sora
+
+}
+
+body::-webkit-scrollbar{
+  width:5px;
+
+}
+body::-webkit-scrollbar-track{
+  @apply bg-transparent
+}
+
+body::-webkit-scrollbar-thumb{
+  @apply rounded-full bg-primary-color
+}
+
+
+@layer base{
+
+  h1{
+    @apply text-3xl lg:text-4xl xl:text-5xl font-semibold  font-sora transition-all duration-300 ease-in-out
+  }
+  h2{
+    @apply text-2xl lg:text-3xl xl:text-4xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
+  }
+  /* 32px */
+  h3{
+    @apply text-base lg:text-2xl xl:text-3xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
+  }
+  h4{
+    @apply text-sm lg:text-xl xl:text-2xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
+  }
+
+}
+
+@theme{
+  /* colors */
+  --color-default-color:#FFFFFF;
+  --color-background-color:rgb(246, 248, 246); /* for body background */
+  --color-primary-color:rgb(15, 157, 69);
+  --color-secondary-color:rgb(140, 198, 63);
+  --color-tertiary-color:rgb(6, 21, 13); /* for footer background */
+  --color-text-tertiary-color:rgb(169, 175, 172);
+
+  /* for linear gradient */
+  /* #0F9D45 #8CC63F */
+  
+  /* text colors */
+  
+  --color-text-primary-color:rgb(140, 198, 63);
+  --color-text-secondary-color:rgb(100, 117, 109);
+  --color-text-tertiary-color:rgb(169, 175, 172);
+  --color-text-quarternary-color:#0B1F14;
+  --color-text-fifth-color:rgb(163, 165, 166);
+
+
+  /* -----------font-section--------- */  
+  --font-sora:"Sora", sans-serif;
+  --font-outfit:"Outfit", sans-serif;
+  --font-opensans:"Open Sans", sans-serif;
+  --font-poppins:"Poppins", sans-serif;
+
+
+}
+
+@layer utilities{
+
+  .top-bottom-gradient{
+    @apply bg-linear-to-b from-primary-color to-secondary-color text-transparent bg-clip-text
+}
+
+}

@@ -1,0 +1,11 @@
+import React from 'react'
+
+const SecondWidthWrapper = ({children}) => {
+  return (
+    <section className = "w-full px-5 py-4 lg:px-10 lg:py-5 mx-auto" >
+        {children}
+    </section>
+  )
+}
+
+export default SecondWidthWrapper
