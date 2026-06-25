@@ -47,11 +47,11 @@ const Navbar = () => {
       </div>
       {/* /for logo */}
 
-      <div className = "hidden lg:block flex flex-row gap-10 ">
+      <div className = "hidden lg:flex flex-row gap-10 ">
         {
           navItems.map((item)=>(
             <div key = {item?.title} className =" group flex flex-row  gap-3 items-center cursor-pointer ">
-              <span className ="text-text-quarternary-color font-outfit text-base group-hover:text-primary-color transition-all duration-200 ease-in-out">{item?.title}</span>
+              <span className ="text-text-quarternary-color font-outfit lg:text-lg group-hover:text-primary-color transition-all duration-200 ease-in-out">{item?.title}</span>
               <span className = "group-hover:text-primary-color">{(item?.dropdown) && <MdKeyboardArrowDown  className = "w-8 h-8 text-text-quarternary-color group-hover:text-primary-color transition-all duration-200 ease-in-out "/> }</span>
 
             </div>

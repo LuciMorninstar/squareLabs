@@ -7,7 +7,7 @@ import { IoArrowForward } from "react-icons/io5";
 const Collaborate = () => {
   return (
     <WidthWrapper>
-      <div className="relative bg-red-500 w-full py-26 flex flex-col gap-5 items-center justify-center text-center rounded-3xl overflow-hidden">
+      <div className="relative w-full py-26 flex flex-col gap-5 items-center justify-center text-center lg:rounded-3xl overflow-hidden">
         {/* absolute bg */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           <img
@@ -19,7 +19,7 @@ const Collaborate = () => {
         {/* /absolute bg */}
 
         {/* content */}
-        <div className="relative flex flex-col items-center gap-5">
+        <div className=" relative flex flex-col items-center gap-2 lg:gap-5">
           <h1 className="text-default-color">
             Let's <span className="top-bottom-gradient">Collaborate</span> &
             Create

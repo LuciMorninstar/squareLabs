@@ -4,18 +4,19 @@ import heroBackground from "../assets/Background.png"
 import { Link } from 'react-router'
 import { IoArrowForward } from "react-icons/io5";
 import GotoSvg from "../assets/svg/gotosvg.svg?react";
+import { useLayoutEffect } from 'react';
 
 const HeroSection = () => {
   return (
 
     <WidthWrapper>
-        <div className = "relative w-full h-[calc(100dvh-75px)] lg:h-[calc(100vh-110px)] overflow-hidden  lg:rounded-4xl">
+        <div className = "relative w-full h-[calc(100dvh-75px)] lg:h-[calc(100vh-110px)] overflow-hidden flex items-center justify-center  lg:rounded-4xl">
             {/* content */}
 
-            <div className = "max-lg:mt-5 w-full  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex flex-col gap-3 lg:gap-8 items-center justify-center text-center">
+            <div className = "max-lg:mt-5 max-xl:mt-8 xl:mt-12 w-full  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex flex-col gap-4 lg:gap-8 items-center justify-center text-center">
 
                 {/* heading section */}
-                <div className = "flex flex-col gap-1 lg:gap-4 text-center"  >\
+                <div className = "flex flex-col gap-1 lg:gap-4 text-center"  >
                     <h1 className = "text-default-color">Building <span className = "top-bottom-gradient font-sora  ">Digital Products</span></h1>
                     <h1 className ="text-default-color">That Move Businesses Forward.</h1>
                 </div>

@@ -52,7 +52,7 @@ const WhatWeDo = () => {
         <h1 className="text-text-quarternary-color text-center">
           What We <span className="top-bottom-gradient">Do</span>
         </h1>
-        <span className="text-xl  text-center text-text-sixth-color">
+        <span className=" text-lg lg:text-xl text-center text-text-sixth-color">
           From ideas to digital products, we design,build, and grow <br />{" "}
           experiences that create impact. is broken.
         </span>
@@ -71,7 +71,7 @@ const WhatWeDo = () => {
 
       {/* bottom section */}
 
-      <div className="w-full flex flex-row border-2 border-primary-color mt-20 min-h-120">
+      <div className="w-full flex flex-row border-2 border-primary-color mt-12 lg:mt-16 min-h-80 md:min-h-100 lg:min-h-120">
         {whatWeDo.map((card) => {
           const isHovered = hoveredCardId === card.id;
           return (
