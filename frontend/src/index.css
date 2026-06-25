@@ -29,7 +29,7 @@ body::-webkit-scrollbar-thumb{
 @layer base{
 
   h1{
-    @apply text-3xl lg:text-4xl xl:text-5xl font-semibold  font-sora transition-all duration-300 ease-in-out
+    @apply text-2xl lg:text-4xl xl:text-5xl font-semibold  font-sora transition-all duration-300 ease-in-out
   }
   h2{
     @apply text-2xl lg:text-3xl xl:text-4xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
@@ -47,11 +47,12 @@ body::-webkit-scrollbar-thumb{
 @theme{
   /* colors */
   --color-default-color:#FFFFFF;
-  --color-background-color:rgb(246, 248, 246); /* for body background */
+  --color-background-color:#F6F8F6; /* for body background */
   --color-primary-color:rgb(15, 157, 69);
   --color-secondary-color:rgb(140, 198, 63);
   --color-tertiary-color:rgb(6, 21, 13); /* for footer background */
-  --color-text-tertiary-color:rgb(169, 175, 172);
+  --color-quarternary-color:#062116; /*for what we do card bg*/
+
 
   /* for linear gradient */
   /* #0F9D45 #8CC63F */
@@ -63,6 +64,9 @@ body::-webkit-scrollbar-thumb{
   --color-text-tertiary-color:rgb(169, 175, 172);
   --color-text-quarternary-color:#0B1F14;
   --color-text-fifth-color:rgb(163, 165, 166);
+  --color-text-sixth-color:#64756D;
+
+  /* --color-text-sixth-color: */
 
 
   /* -----------font-section--------- */  
@@ -78,6 +82,10 @@ body::-webkit-scrollbar-thumb{
 
   .top-bottom-gradient{
     @apply bg-linear-to-b from-primary-color to-secondary-color text-transparent bg-clip-text
+}
+
+.card-shadow{
+  @apply shadow-[-4px_4px_8px_0px_rgba(0,0,0,0.1)]
 }
 
 }

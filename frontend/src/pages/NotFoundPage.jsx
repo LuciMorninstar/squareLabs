@@ -13,7 +13,7 @@ const NotFoundPage = () => {
     <section className = "relative w-full h-screen overflow-hidden ">
         <img src={Grid2} className = "w-full h-full object-fit object-center" alt="404-Image"/>
         <img src={errorCode} className = 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max h-max object-cover object-center xl:scale-110 '/>
-
+      
       {/* bottom blur */}
       <div className = "h-screen w-full absolute top-1/2 mt-10   blur-[300px] bg-text-secondary-color  rounded-[50%] ">
 adsf

@@ -65,7 +65,7 @@ const OurInsights = () => {
           >
             {/* background Image */}
             <img
-              className="w-full h-full absolute top-0 left-0 object-cover object-center -z-10"
+              className="w-full h-full absolute top-0 left-0 object-cover object-center -z-10 "
               src={insight.image}
               alt="backgroundImage"
             />
