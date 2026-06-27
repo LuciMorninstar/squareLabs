@@ -1,4 +1,3 @@
-import React from "react";
 import WidthWrapper from "./WidthWrapper";
 import collabBg from "../assets/collabBg.png";
 import { Link } from "react-router";

@@ -1,69 +1,110 @@
-import React from "react";
+import { useState } from "react";
 import WidthWrapper from "./WidthWrapper";
 import whyUsBg from "../assets/whyusbg.png";
-import Business from "../assets/WhyUs/Business.png";
-import engineering from "../assets/WhyUs/engineering.png";
-import explorenepal from "../assets/WhyUs/explorenepal.png";
-import humanCentric from "../assets/WhyUs/humanCentric.png";
-import longTerm from "../assets/WhyUs/LongTerm.png";
-import productThinking from "../assets/WhyUs/productThinking.png";
-
+import { whyUsCards } from "../constants/whyUs";
+import { IoChevronDown } from "react-icons/io5";
 
 const WhyUs = () => {
+  const [openId, setOpenId] = useState(null);
 
-    const whyUsCards = [
-        {title:<>Product <br/> Thinking</>, icon:productThinking, desc:"We combine years of experience with cutting edge tech to deliver high performance software."},
-        {title:"Engineering Excellence", icon:engineering, desc:"Every project is tailored to your need, ensuring flexibility and growth as your business expands."},
-        {title:"Human-Centric Design", icon:humanCentric, desc:"We prioritize intuitive, clean, and modern UI/UX to enhance usability and enhancement"},
-        {title:"Long-Term Partnership", icon:longTerm, desc:"From planning to post-launch maintenance, we guide you at every steps to ensure success. "},
-        {title:"Business focused Results", icon:productThinking, desc:"With 100+ successful projects, we have a reputation for delivering quality, efficiency, and reliability.  "},
-    ]
+  const toggle = (id) => setOpenId(openId === id ? null : id);
+
   return (
     <WidthWrapper>
-      <div className="relative w-full  overflow-hidden px-5 py-8 lg:px-16 lg:py-24 lg:rounded-4xl flex flex-col gap-20">
+      <div className="relative w-full overflow-hidden px-5 py-8 lg:px-16 lg:py-24 lg:rounded-4xl flex flex-col gap-10 2xl:gap-20">
+
         {/* absolute image */}
-        <img
-          className="absolute -z-10 inset-0 top-0 left-0 w-full h-full"
-          src={whyUsBg}
-          alt="whyusBg"
-        />
+        <div className="absolute inset-0 overflow-hidden lg:rounded-4xl rounded-none">
+          <img
+            className="w-full h-full object-cover object-center"
+            src={whyUsBg}
+            alt="whyusBg"
+          />
+        </div>
 
         {/* top */}
-        <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:items-betwen ">
+        <div className="relative z-10 flex flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:items-center">
           <h1 className="text-default-color flex flex-row gap-3">
-            Why <span className="top-bottom-gradient font-sora">Us?</span> 
+            Why <span className="top-bottom-gradient font-sora">Us?</span>
           </h1>
-          <p className="text-text-secondary-color text-lg ">
-          We  help businesses scale, innovate & stay ahead. Whether it’s <br className = "hidden lg:block"/>custom applications, SaaS platforms, or AI driven solutions, we <br className = "hidden lg:block"/>craft technology that built for the future.
+          <p className="text-text-secondary-color text-lg">
+            We help businesses scale, innovate & stay ahead. Whether it's{" "}
+            <br className="hidden lg:block" />
+            custom applications, SaaS platforms, or AI driven solutions, we{" "}
+            <br className="hidden lg:block" />
+            craft technology that built for the future.
           </p>
         </div>
 
-        {/* /top */}
-
         {/* bottom */}
-        <div className ="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-            {
-                whyUsCards.map((card)=>(
-                    <div className = "flex flex-col gap-28 md:gap-30 xl:gap-36 px-4 py-4 rounded-4xl glassmorphism-effect">
-                        {/* for icon */}
-                        <div className = "size-16 md:size-20  xl:size-24  oveflow-hidden ">
-                            <img src={card.icon} alt={card.title} className = 'w-full h-full object-center object-cover' />
-                        </div>
-                        {/* /for icon */}
+        <div className="relative z-10">
 
-
-                        <div className = "flex flex-col gap-4">
-                            <span className = "text-default-color text-xl ">{card.title}</span> 
-                            <p className = "text-text-sixth-color  text-base lg:text-lg line-clamp-3 leading-8 ">{card.desc}</p>  
-                        </div>
+          {/* accordion — shown below 2xl */}
+          <div className="flex flex-col divide-y divide-white/10 2xl:hidden">
+            {(whyUsCards || []).map((card) => (
+              <div key={card.id}>
+                <button
+                  onClick={() => toggle(card.id)}
+                  className="w-full flex flex-row items-center justify-between gap-4 py-4 text-left"
+                >
+                  <div className="flex flex-row items-center gap-4">
+                    <div className="size-10 shrink-0 overflow-hidden">
+                      <img
+                        src={card.icon}
+                        alt={card.title}
+                        className="w-full h-full object-cover object-center"
+                      />
                     </div>
-                ))
+                    <span className="text-default-color text-base font-medium">
+                      {card.title}
+                    </span>
+                  </div>
+                  <IoChevronDown
+                    className={`text-default-color text-xl shrink-0 transition-transform duration-300 ease-in-out ${
+                      openId === card.id ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </button>
 
-            }
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openId === card.id ? "max-h-40 opacity-100 pb-4" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-text-sixth-color text-sm leading-7 pl-14">
+                    {card.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* grid — shown only on 2xl+ */}
+          <div className="hidden 2xl:grid 2xl:grid-cols-5 gap-4">
+            {whyUsCards.map((card) => (
+              <div
+                key={card.id}
+              className="flex flex-col justify-between min-h-105 px-4 py-4 rounded-4xl glassmorphism-effect"
+              >
+                <div className="size-24 overflow-hidden">
+                  <img
+                    src={card.icon}
+                    alt={card.title}
+                    className="w-full h-full object-center object-cover"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <span className="text-default-color text-xl">{card.title}</span>
+                  <p className="text-text-sixth-color text-lg line-clamp-3 leading-8">
+                    {card.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
         </div>
 
-        {/* /bottom */}
       </div>
     </WidthWrapper>
   );

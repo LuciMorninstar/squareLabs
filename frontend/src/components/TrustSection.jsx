@@ -1,4 +1,3 @@
-import React from "react";
 import SecondWidthWrapper from "./SecondWidthWrapper";
 import { IoArrowForward, IoCheckmark } from "react-icons/io5";
 import projectDelivered from "../assets/projectDelivered.png";
@@ -30,13 +29,13 @@ const TrustSection = () => {
 
   return (
     <SecondWidthWrapper>
-      <div className=" lg:py-42 h-screen w-full  grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-60">
+      <div className=" py-16 lg:py-42   w-full  grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-60">
         {/* left side */}
         <div className=" flex flex-col gap-2 lg:gap-4 lg:p-0  ">
-          <h2 className="text-text-quarternary-color">
+          <h1 className="text-text-quarternary-color">
             Trusted By Businesses <br /> Driven By{" "}
             <span className="top-bottom-gradient">Digital Innovation</span>
-          </h2>
+          </h1>
 
           <p className="text-text-secondary-color text-base md:text-lg  lg:text-xl text-justify">
             With years of experience delivering digital solutions, Square Labs

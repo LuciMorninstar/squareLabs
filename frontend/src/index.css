@@ -14,7 +14,7 @@ body{
 }
 
 body::-webkit-scrollbar{
-  width:5px;
+  width:8px;
 
 }
 body::-webkit-scrollbar-track{
@@ -47,6 +47,63 @@ body::-webkit-scrollbar-thumb{
   flex-shrink: 0;          /* IMPORTANT */
 }
 
+
+/* .swiper-pagination {
+  position: relative !important;
+  margin-top: 32px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,.3);
+  opacity: 1;
+  transition: all .3s;
+}
+
+.swiper-pagination-bullet-active {
+  width: 40px;
+  border-radius: 999px;
+  background: var(--primary-color);
+} */
+
+/* --------------testimonial------------- */
+.testimonial-swiper {
+  overflow: visible !important;
+  width: 100%;
+}
+
+.testimonial-slide {
+  width: 66% !important;
+  height: 420px;
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-slide {
+    width: 75% !important;
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-slide {
+    width: 88% !important;
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-slide {
+    width: 92% !important;
+    height: 280px;
+  }
+}
+
+
+/* ------------testimonial ends----------- */
+
+
 @layer base{
 
   h1{
@@ -73,6 +130,7 @@ body::-webkit-scrollbar-thumb{
   --color-secondary-color:rgb(140, 198, 63);
   --color-tertiary-color:rgb(6, 21, 13); /* for footer background */
   --color-quarternary-color:#062116; /*for what we do card bg*/
+  --color-footer-background-color:#06150D;
 
 
   /* for linear gradient */

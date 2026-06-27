@@ -10,7 +10,7 @@ import { IoArrowForward } from "react-icons/io5";
 
 const NotFoundPage = () => {
   return (
-    <section className = "relative w-full h-screen overflow-hidden ">
+    <section className = "relative w-full max-md:h-[100dvh] md:h-screen overflow-hidden ">
         <img src={Grid2} className = "w-full h-full object-fit object-center" alt="404-Image"/>
         <img src={errorCode} className = 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max h-max object-cover object-center xl:scale-110 '/>
       

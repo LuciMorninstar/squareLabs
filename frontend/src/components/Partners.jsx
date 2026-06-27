@@ -30,10 +30,10 @@ const Partners = () => {
     <WidthWrapper>
         <div className = "w-full overflow-hidden  py-4 lg:py-8 xl:py-10">
               <div className="card-container w-max ">
-    {[...partners, ...partners].map((partner, i) => (
+    {[...partners, ...partners].map((partner) => (
       <div key={partner.name} className = " w-max  h-20  lg:w-max lg:h-24  xl:h-28 ">
-        <img src={partner.logo} className = "grayscale-100 opacity-50 w-full h-full" alt={partner.name}/>
-      </div>
+        <img src={partner.logo} className = "grayscale-100 hover:grayscale-0 opacity-50 hover:opacity-100 w-full h-full transition-all duration-200 ease-in-out" alt={partner.name}/>
+      </div>  
     ))}
   </div>
 
