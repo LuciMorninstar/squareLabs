@@ -11,7 +11,7 @@ const MegaMenu = ({ visible, categories }) => {
     <div
       className={[
         "fixed left-4 right-4 z-[9999]",
-        "bg-white rounded-3xl border border-[#ebebeb]",
+        "bg-default-color rounded-3xl border border-[#ebebeb]",
         "shadow-[0_32px_80px_rgba(0,0,0,0.14)]",
         "transition-all duration-300 ease-out origin-top",
         visible

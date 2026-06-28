@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Grid2 from "../assets/Grid2.png"
 import errorCode from "../assets/404.png"
 

@@ -5,7 +5,7 @@ import TrustSection from '../components/TrustSection'
 import Collaborate from '../components/Collaborate'
 import Partners from '../components/Partners'
 import WhyUs from '../components/WhyUs'
-import TestimonialSection from '../components/TestimonialSection'
+
 import TestimonialCard from '../components/TestimonialCard'
 import Testimonial2 from '../components/Testimonial2'
 

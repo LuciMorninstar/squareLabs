@@ -1,30 +1,54 @@
 import SecondWidthWrapper from "./SecondWidthWrapper";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import GotoSvg from "../assets/svg/gotosvg.svg?react";
 import { Link } from "react-router";
-
 import { whatWeDo } from "../constants/whatWeDo.js";
-
 
 const WhatWeDo = () => {
   const [hoveredCardId, setHoveredCardId] = useState(1);
+  const sectionRef = useRef(null);
 
- 
+  useEffect(() => {
+    const elements = sectionRef.current?.querySelectorAll("[data-animate]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(30px)";
+      el.style.transition = `opacity 0.6s ease ${i * 0.15}s, transform 0.6s ease ${i * 0.15}s`;
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <SecondWidthWrapper>
+      <div ref={sectionRef} className="w-full xl:h-screen pt-5 xl:pt-20">
 
-      <div className = "w-full xl:h-screen  xl:pt-20">
-      {/* top section */}
+        {/* top section */}
         <div className="w-full flex flex-col gap-5 items-center">
-          <h1 className="text-text-quarternary-color text-center">
+          <h1 data-animate className="text-text-quarternary-color text-center">
             What We <span className="top-bottom-gradient">Do</span>
           </h1>
-          <span className="text-lg lg:text-xl text-center text-text-sixth-color font-sora">
+          <span data-animate className="text-lg lg:text-xl text-center text-text-sixth-color font-sora">
             From ideas to digital products, we design, build, and grow <br />
             experiences that create impact.
           </span>
           <Link
+            data-animate
             to="/start-a-project"
             className="flex flex-row gap-4 items-center justify-center rounded-4xl bg-primary-color px-6 py-4 w-max"
           >
@@ -35,8 +59,8 @@ const WhatWeDo = () => {
           </Link>
         </div>
 
-        {/* bottom section */}
-        <div className="mt-12 lg:mt-16 border-2 border-primary-color">
+        {/* bottom section — one block, observed as one unit */}
+        <div data-animate className="mt-12 lg:mt-16 border-2 border-primary-color">
 
           {/* MOBILE/MD — vertical stack */}
           <div className="flex lg:hidden flex-col w-full">
@@ -51,46 +75,27 @@ const WhatWeDo = () => {
                     ${isActive ? "min-h-64 bg-quarternary-color" : "min-h-20"}
                   `}
                 >
-                  {/* number */}
                   <span className="absolute top-4 left-6 text-text-quarternary-color text-5xl font-semibold">
                     {card.id}
                   </span>
-
-                  {/* collapsed: title bottom right */}
-                  <div
-                    className={`absolute bottom-4 right-6 transition-all duration-300
-                      ${isActive ? "opacity-0 translate-y-2 pointer-events-none" : "opacity-100 translate-y-0"}
-                    `}
+                  <div className={`absolute bottom-4 right-6 transition-all duration-300
+                    ${isActive ? "opacity-0 translate-y-2 pointer-events-none" : "opacity-100 translate-y-0"}`}
                   >
                     <h2 className="top-bottom-gradient">{card.title}</h2>
                   </div>
-
-                  {/* expanded: number + title top, items center */}
-                  <div
-                    className={`absolute top-4 left-0 right-0 flex justify-center transition-all duration-300 delay-100
-                      ${isActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
-                    `}
+                  <div className={`absolute top-4 left-0 right-0 flex justify-center transition-all duration-300 delay-100
+                    ${isActive ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}`}
                   >
                     <div className="flex flex-row items-end gap-2">
-                      <span className="text-default-color font-sora font-semibold text-5xl">
-                        {card.id}.
-                      </span>
+                      <span className="text-default-color font-sora font-semibold text-5xl">{card.id}.</span>
                       <h2 className="text-default-color font-semibold">{card.title}</h2>
                     </div>
                   </div>
-
-                  <div
-                    className={`absolute bottom-8 left-0 right-0 flex flex-col items-center gap-3 transition-all duration-300 delay-100
-                      ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}
-                    `}
+                  <div className={`absolute bottom-8 left-0 right-0 flex flex-col items-center gap-3 transition-all duration-300 delay-100
+                    ${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}`}
                   >
                     {card.items?.map((item) => (
-                      <h4
-                        key={item}
-                        className="text-text-secondary-color font-outfit font-semibold"
-                      >
-                        {item}
-                      </h4>
+                      <h4 key={item} className="text-text-secondary-color font-outfit font-semibold">{item}</h4>
                     ))}
                   </div>
                 </div>
@@ -98,7 +103,7 @@ const WhatWeDo = () => {
             })}
           </div>
 
-          {/* DESKTOP — horizontal (original) */}
+          {/* DESKTOP — horizontal */}
           <div className="hidden lg:flex flex-row w-full min-h-80 md:min-h-100 lg:min-h-120">
             {whatWeDo.map((card) => {
               const isHovered = hoveredCardId === card.id;
@@ -116,42 +121,26 @@ const WhatWeDo = () => {
                   <span className="absolute top-8 left-6 text-text-quarternary-color text-7xl font-semibold">
                     {card.id}
                   </span>
-
-                  <div
-                    className={`absolute bottom-8 left-6 transition-all duration-300
-                      ${isHovered ? "opacity-0 translate-y-3 pointer-events-none" : "opacity-100 translate-y-0"}
-                    `}
+                  <div className={`absolute bottom-8 left-6 transition-all duration-300
+                    ${isHovered ? "opacity-0 translate-y-3 pointer-events-none" : "opacity-100 translate-y-0"}`}
                   >
                     <h1 className="top-bottom-gradient">{card.title}</h1>
                   </div>
-
-                  <div
-                    className={`absolute bottom-16 left-0 right-0 flex flex-col items-center gap-6
-                      transition-all duration-300 delay-100
-                      ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"}
-                    `}
+                  <div className={`absolute bottom-16 left-0 right-0 flex flex-col items-center gap-6
+                    transition-all duration-300 delay-100
+                    ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"}`}
                   >
                     <div className="flex flex-col items-center gap-3">
                       {card.items?.map((item) => (
-                        <h4
-                          key={item}
-                          className="text-text-secondary-color font-outfit font-semibold"
-                        >
-                          {item}
-                        </h4>
+                        <h4 key={item} className="text-text-secondary-color font-outfit font-semibold">{item}</h4>
                       ))}
                     </div>
                   </div>
-
-                  <div
-                    className={`absolute top-14 left-0 right-0 flex justify-center transition-all duration-300 delay-100
-                      ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"}
-                    `}
+                  <div className={`absolute top-14 left-0 right-0 flex justify-center transition-all duration-300 delay-100
+                    ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"}`}
                   >
                     <div className="flex flex-row items-end gap-3">
-                      <span className="text-default-color font-sora font-semibold text-6xl">
-                        {card.id}.
-                      </span>
+                      <span className="text-default-color font-sora font-semibold text-6xl">{card.id}.</span>
                       <h1 className="text-default-color font-semi">{card.title}</h1>
                     </div>
                   </div>

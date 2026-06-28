@@ -28,7 +28,7 @@ const Partners = () => {
     ]
   return (
     <WidthWrapper>
-        <div className = "w-full overflow-hidden  py-4 lg:py-8 xl:py-10">
+        <div className = "w-full overflow-hidden  py-8 lg:py-8 xl:py-10">
               <div className="card-container w-max ">
     {[...partners, ...partners].map((partner) => (
       <div key={partner.name} className = " w-max  h-20  lg:w-max lg:h-24  xl:h-28 ">

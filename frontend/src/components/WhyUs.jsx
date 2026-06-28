@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import WidthWrapper from "./WidthWrapper";
 import whyUsBg from "../assets/whyusbg.png";
 import { whyUsCards } from "../constants/whyUs";
@@ -6,13 +6,42 @@ import { IoChevronDown } from "react-icons/io5";
 
 const WhyUs = () => {
   const [openId, setOpenId] = useState(null);
+  const sectionRef = useRef(null);
 
   const toggle = (id) => setOpenId(openId === id ? null : id);
 
+  useEffect(() => {
+    const elements = sectionRef.current?.querySelectorAll("[data-animate]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    elements.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(40px)";
+      el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <WidthWrapper>
-      <div className="relative w-full overflow-hidden px-5 py-8 lg:px-16 lg:py-24 lg:rounded-4xl flex flex-col gap-10 2xl:gap-20">
-
+      <div
+        ref={sectionRef}
+        className="relative w-full mt-8 overflow-hidden px-5 py-12 lg:px-16 lg:py-24 lg:rounded-4xl flex flex-col gap-10 2xl:gap-20"
+      >
         {/* absolute image */}
         <div className="absolute inset-0 overflow-hidden lg:rounded-4xl rounded-none">
           <img
@@ -24,10 +53,10 @@ const WhyUs = () => {
 
         {/* top */}
         <div className="relative z-10 flex flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:items-center">
-          <h1 className="text-default-color flex flex-row gap-3">
+          <h1 data-animate className="text-default-color flex flex-row gap-3">
             Why <span className="top-bottom-gradient font-sora">Us?</span>
           </h1>
-          <p className="text-text-secondary-color text-lg">
+          <p data-animate className="text-text-secondary-color text-lg">
             We help businesses scale, innovate & stay ahead. Whether it's{" "}
             <br className="hidden lg:block" />
             custom applications, SaaS platforms, or AI driven solutions, we{" "}
@@ -42,7 +71,7 @@ const WhyUs = () => {
           {/* accordion — shown below 2xl */}
           <div className="flex flex-col divide-y divide-white/10 2xl:hidden">
             {(whyUsCards || []).map((card) => (
-              <div key={card.id}>
+              <div data-animate key={card.id}>
                 <button
                   onClick={() => toggle(card.id)}
                   className="w-full flex flex-row items-center justify-between gap-4 py-4 text-left"
@@ -65,7 +94,6 @@ const WhyUs = () => {
                     }`}
                   />
                 </button>
-
                 <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
                     openId === card.id ? "max-h-40 opacity-100 pb-4" : "max-h-0 opacity-0"
@@ -83,8 +111,9 @@ const WhyUs = () => {
           <div className="hidden 2xl:grid 2xl:grid-cols-5 gap-4">
             {whyUsCards.map((card) => (
               <div
+                data-animate
                 key={card.id}
-              className="flex flex-col justify-between min-h-105 px-4 py-4 rounded-4xl glassmorphism-effect"
+                className="flex flex-col justify-between min-h-100 px-4 py-4 rounded-4xl glassmorphism-effect"
               >
                 <div className="size-24 overflow-hidden">
                   <img
@@ -104,7 +133,6 @@ const WhyUs = () => {
           </div>
 
         </div>
-
       </div>
     </WidthWrapper>
   );

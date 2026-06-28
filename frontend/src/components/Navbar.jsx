@@ -12,10 +12,10 @@ const Navbar = () => {
   const closeTimer = useRef(null);
 
   const navItems = [
-    { title: "What we do",  link: "", dropdown: true },
-    { title: "Who we are ", link: "", dropdown: true },
-    { title: "Our work",    link: "", dropdown: false },
-    { title: "Resources",   link: "", dropdown: false },
+    { title: "What we do",  link: "/what-we-do", dropdown: true },
+    { title: "Who we are ", link: "/who-we-are", dropdown: true },
+    { title: "Our work",    link: "/our-work", dropdown: false },
+    { title: "Resources",   link: "/resources", dropdown: false },
   ];
 
   const handleMouseEnter = (title) => {
@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
    
     <nav
-      className="flex flex-row justify-between items-center px-6 lg:px-12 xl:px-16 pt-3 "
+      className="flex flex-row justify-between items-center px-6 lg:px-12 xl:px-16 xl:pt-3 "
       style={{ position: "relative" }}
     >
 
@@ -49,7 +49,8 @@ const Navbar = () => {
         {/* Nav items */}
         <div className="hidden lg:flex flex-row gap-10">
           {navItems.map((item) => (
-            <div
+            <Link
+              to={item.link}
               key={item.title}
               style={{ position: "relative" }}
               onMouseEnter={() => item.dropdown && handleMouseEnter(item.title)}
@@ -80,7 +81,7 @@ const Navbar = () => {
                   categories={megaMenuData[item.title]}
                 />
               )}
-            </div>
+            </Link>
           ))}
         </div>
 

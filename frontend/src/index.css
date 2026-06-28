@@ -40,7 +40,7 @@ body::-webkit-scrollbar-thumb{
   white-space: nowrap;
   width: max-content;      /* IMPORTANT */
    gap: 3rem;    
-  animation: loop 15s linear infinite;
+  animation: loop 20s linear infinite;
 }
 
 .card-container > div {
@@ -107,7 +107,7 @@ body::-webkit-scrollbar-thumb{
 @layer base{
 
   h1{
-    @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold  font-sora transition-all duration-300 ease-in-out
+    @apply text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold  font-sora transition-all duration-300 ease-in-out
   }
   h2{
     @apply text-2xl lg:text-3xl xl:text-4xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
@@ -131,6 +131,7 @@ body::-webkit-scrollbar-thumb{
   --color-tertiary-color:rgb(6, 21, 13); /* for footer background */
   --color-quarternary-color:#062116; /*for what we do card bg*/
   --color-footer-background-color:#06150D;
+  --color-fifth-color:#1e3011;
 
 
   /* for linear gradient */
@@ -145,6 +146,7 @@ body::-webkit-scrollbar-thumb{
   --color-text-fifth-color:rgb(163, 165, 166);
   --color-text-sixth-color:#64756D;
   --color-text-seventh-color:#9ea0a2; /*our insight paragraph*/
+  --color-text-eight-color:#b7bdbd;
   
 
   /* --color-text-sixth-color: */
@@ -177,6 +179,9 @@ body::-webkit-scrollbar-thumb{
   @apply bg-white/5 backdrop-blur-sm
         border border-white/10
         hover:bg-white/10 transition-all duration-200
+}
+.button-style{
+  @apply w-max  flex flex-row gap-0 sm:gap-3 lg:gap-4 items-center justify-center rounded-4xl bg-primary-color px-3 py-4 sm:px-4 sm:py-4 lg:px-6 lg:py-4
 }
 
 }
