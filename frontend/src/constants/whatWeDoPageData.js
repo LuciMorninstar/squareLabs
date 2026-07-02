@@ -6,6 +6,12 @@ import WebDevelopmentSvg from "../assets/whatWeDoPage/webDevelopment.svg?react";
 import MaintenanceSvg from "../assets/whatWeDoPage/maintenance.svg?react";
 import MobileApplicationSvg from "../assets/whatWeDoPage/mobileApplication.svg?react";
 import DigitalMarketingSvg from "../assets/whatWeDoPage/DigitalMarketing.svg?react";
+import cloud from "../assets/whatWeDoPage/brand.png"
+import digital from "../assets/whatWeDoPage/digital.png"
+import seo from "../assets/whatWeDoPage/seo.png"
+import mobile from "../assets/whatWeDoPage/mobile.png"
+import web from "../assets/whatWeDoPage/web.png"
+import brand from "../assets/whatWeDoPage/brand.png"
 
 export const whatWeDoPageData = [
   {
@@ -23,6 +29,8 @@ export const whatWeDoPageData = [
           "High-fidelity Design",
           "Design Systems",
         ],
+        image:digital,
+      
       },
       {
         id: 2,
@@ -34,6 +42,7 @@ export const whatWeDoPageData = [
           "CMS Integration",
           "E-commerce Engines",
         ],
+        image:web,
       },
       {
         id: 3,
@@ -45,6 +54,7 @@ export const whatWeDoPageData = [
           "Cross-Platform Solutions",
           "App Store Optimization",
         ],
+        image:mobile,
       },
     ],
   },
@@ -55,23 +65,26 @@ export const whatWeDoPageData = [
     cards: [
       {
         id: 1,
-        title: "Ditial Marketing",
+        title: "Digital Marketing",
         icon:DigitalMarketingSvg,
-        desc:"Data-led campaigns that drive traffic,conversion, and sustainable user retention across all digital channels."
+        desc:"Data-led campaigns that drive traffic,conversion, and sustainable user retention across all digital channels.",
+        image:digital,
       
       },
       {
         id: 2,
         title: "SEO Optimization",
         icon:SeoSvg,
-        desc:"Advanced search strategies to ensure yourproduct ranks at the top where your future customers are looking."
+        desc:"Advanced search strategies to ensure yourproduct ranks at the top where your future customers are looking.",
+        image:seo,
         
       },
       {
         id: 3,
         title: "Brand Strategy",
         icon:BrandSvg,
-        desc:"Defining your voice and visual identity to create a cohesive and powerful presence in the marketplace."
+        desc:"Defining your voice and visual identity to create a cohesive and powerful presence in the marketplace.",
+        image:brand,
       
       },
     ],
@@ -85,21 +98,24 @@ export const whatWeDoPageData = [
         id: 1,
         title: "Cloud Solutions",
         icon:CLoudSvg,
-        desc:"AWS, Azure, and Google Cloud infrastructure setup and management for robust global performance."
+        desc:"AWS, Azure, and Google Cloud infrastructure setup and management for robust global performance.",
+        image:cloud,
       
       },
       {
         id: 2,
         title: "Domain & Hosting",
         icon:DomainSvg,
-        desc:"Managed high-speed hosting and domain security services to keep your platform online 24/7."
+        desc:"Managed high-speed hosting and domain security services to keep your platform online 24/7.",
+        image:web,
         
       },
       {
         id: 3,
         title: "Maintenance",
         icon:MaintenanceSvg,
-        desc:"Regular updates, security patches, and performance monitoring to keep your tech stack future-proof."
+        desc:"Regular updates, security patches, and performance monitoring to keep your tech stack future-proof.",
+        image:mobile,
       
       },
     ],

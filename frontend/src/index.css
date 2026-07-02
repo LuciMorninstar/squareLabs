@@ -100,6 +100,18 @@ body::-webkit-scrollbar-thumb{
   }
 }
 
+/* animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-up.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ------------testimonial ends----------- */
 
@@ -132,6 +144,8 @@ body::-webkit-scrollbar-thumb{
   --color-quarternary-color:#062116; /*for what we do card bg*/
   --color-footer-background-color:#06150D;
   --color-fifth-color:#1e3011;
+  --color-sixth-color:#183018;
+  --color-seventh-color:#ecf4e4;
 
 
   /* for linear gradient */
