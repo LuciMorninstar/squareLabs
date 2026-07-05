@@ -1,5 +1,5 @@
 
-import DigitalProducts from '../components/DigitalProducts'
+import WhatWeDoSquarlabs from '../components/WhatDoSquareLabs'
 import WhatWeDoHero from '../components/WhatWeDoHero'
 import WhatWeDoHero2 from '../components/WhatWeDoHero2'
 
@@ -8,6 +8,7 @@ const WhatWeDoPage = () => {
     <>
    <WhatWeDoHero/>
    <WhatWeDoHero2/>
+   <WhatWeDoSquarlabs/>
    {/* <DigitalProducts/> */}
     </>
   )

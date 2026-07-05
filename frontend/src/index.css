@@ -132,6 +132,7 @@ body::-webkit-scrollbar-thumb{
   --color-quarternary-color:#062116; /*for what we do card bg*/
   --color-footer-background-color:#06150D;
   --color-fifth-color:#1e3011;
+  --color-feature-bg: #ebf3e4;
 
 
   /* for linear gradient */
