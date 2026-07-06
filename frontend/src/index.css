@@ -14,7 +14,7 @@ body{
 }
 
 body::-webkit-scrollbar{
-  width:5px;
+  width:8px;
 
 }
 body::-webkit-scrollbar-track{
@@ -26,17 +26,107 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+ /* infinite brand partners logo */
+
+
+@keyframes loop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: max-content;      /* IMPORTANT */
+   gap: 3rem;    
+  animation: loop 20s linear infinite;
+}
+
+.card-container > div {
+  flex-shrink: 0;          /* IMPORTANT */
+}
+
+
+/* .swiper-pagination {
+  position: relative !important;
+  margin-top: 32px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,.3);
+  opacity: 1;
+  transition: all .3s;
+}
+
+.swiper-pagination-bullet-active {
+  width: 40px;
+  border-radius: 999px;
+  background: var(--primary-color);
+} */
+
+/* --------------testimonial------------- */
+.testimonial-swiper {
+  overflow: visible !important;
+  width: 100%;
+}
+
+.testimonial-slide {
+  width: 66% !important;
+  height: 420px;
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+  .testimonial-slide {
+    width: 75% !important;
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-slide {
+    width: 88% !important;
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-slide {
+    width: 92% !important;
+    height: 280px;
+  }
+}
+
+/* animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-up.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ------------testimonial ends----------- */
+
+
 @layer base{
 
   h1{
-    @apply text-2xl lg:text-4xl xl:text-5xl font-semibold  font-sora transition-all duration-300 ease-in-out
+    @apply text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold  font-sora transition-all duration-300 ease-in-out
   }
   h2{
     @apply text-2xl lg:text-3xl xl:text-4xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
   }
   /* 32px */
   h3{
-    @apply text-base lg:text-2xl xl:text-3xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
+    @apply text-xl lg:text-2xl xl:text-3xl text-default-color font-sora transition-all duration-300 ease-in-out
   }
   h4{
     @apply text-sm lg:text-xl xl:text-2xl font-semibold text-default-color font-sora transition-all duration-300 ease-in-out
@@ -52,6 +142,10 @@ body::-webkit-scrollbar-thumb{
   --color-secondary-color:rgb(140, 198, 63);
   --color-tertiary-color:rgb(6, 21, 13); /* for footer background */
   --color-quarternary-color:#062116; /*for what we do card bg*/
+  --color-footer-background-color:#06150D;
+  --color-fifth-color:#1e3011;
+  --color-sixth-color:#183018;
+  --color-seventh-color:#ecf4e4;
 
 
   /* for linear gradient */
@@ -65,6 +159,9 @@ body::-webkit-scrollbar-thumb{
   --color-text-quarternary-color:#0B1F14;
   --color-text-fifth-color:rgb(163, 165, 166);
   --color-text-sixth-color:#64756D;
+  --color-text-seventh-color:#9ea0a2; /*our insight paragraph*/
+  --color-text-eight-color:#b7bdbd;
+  
 
   /* --color-text-sixth-color: */
 
@@ -86,6 +183,19 @@ body::-webkit-scrollbar-thumb{
 
 .card-shadow{
   @apply shadow-[-4px_4px_8px_0px_rgba(0,0,0,0.1)]
+}
+
+.paragraph_style{
+  @apply text-text-secondary-color text-lg lg:text-xl text-justify
+}
+
+.glassmorphism-effect{
+  @apply bg-white/5 backdrop-blur-sm
+        border border-white/10
+        hover:bg-white/10 transition-all duration-200
+}
+.button-style{
+  @apply w-max  flex flex-row gap-0 sm:gap-3 lg:gap-4 items-center justify-center rounded-4xl bg-primary-color px-3 py-4 sm:px-4 sm:py-4 lg:px-6 lg:py-4
 }
 
 }
