@@ -6,12 +6,15 @@ import WhatWeDoCards from '../components/WhatWeDoCards'
 import {whatWeDoPageData} from "../constants/whatWeDoPageData"
 import OurApproach from '../components/OurApproach'
 import WhySquareLabs from '../components/WhySquareLabs'
+import WhoIsSquareLabs from '../components/WhoIsSquareLabs'
+import OurMissionAndVision from "../components/OurMissionAndVision"
+import Collaborate from '../components/Collaborate'
 
 const WhatWeDoPage = () => {
   console.log(whatWeDoPageData, "Whatwedo"
   )
   return (
-    <>
+    <>s
    <WhatWeDoHero/>
    <WhatWeDoHero2/>
    <div className = "flex flex-col gap-3 ">
@@ -25,6 +28,8 @@ const WhatWeDoPage = () => {
 
    <OurApproach/>
    <WhySquareLabs/>
+   <Collaborate/>
+
 
    
     </>

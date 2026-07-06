@@ -1,12 +1,8 @@
 import { useRef, useEffect } from "react";
 import SecondWidthWrapper from "./SecondWidthWrapper";
-import { IoArrowForward, IoCheckmark } from "react-icons/io5";
-import projectDelivered from "../assets/projectDelivered.png";
-import yearsExperience from "../assets/yearsExperience.png";
-import happyClients from "../assets/happyClients.png";
-import customerSatisfaction from "../assets/customerSatisfaction.png";
+import { IoArrowForward } from "react-icons/io5";
 import { Link } from "react-router";
-import Counter from "./Counter";
+import {timeline} from "../constants/whoWeAreData.js"
 
 const TimeLine = () => {
   const sectionRef = useRef(null);
@@ -37,27 +33,16 @@ const TimeLine = () => {
     return () => observer.disconnect();
   }, []);
 
-  const points = [
-    "Dedicated point of contact on every project",
-    "Transparent timelines, no hidden scope creep",
-    "Post-launch support that doesn't disappear after invoice",
-  ];
 
-  const whatWeDoCards = [
-    { title: "Project Delivered", count: 100, icon: projectDelivered, suffix: "+" },
-    { title: "Happy Clients", count: 50, icon: happyClients, suffix: "+" },
-    { title: "Customer Satisfaction", count: 98, suffix: "%", icon: customerSatisfaction },
-    { title: "Years Experience", count: 5, icon: yearsExperience, suffix: "+" },
-  ];
 
   return (
     <SecondWidthWrapper>
       <div
         ref={sectionRef}
-        className="h-[100dvh] lg:h-screen py-16 lg:py-24 w-full flex flex-row justify-center items-center gap-8 lg:gap-16 xl:gap-60 "
+        className="min-h-screen lg:h-screen py-16 lg:py-24 w-full flex flex-col lg:flex-row justify-center items-center gap-16 lg:gap-16 xl:gap-60 "
       >
         {/* left side */}
-        <div className="w-1/2 flex flex-col gap-2 lg:gap-4 lg:p-0">
+        <div className="w-full lg:w-1/2 flex flex-col gap-2 lg:gap-4 lg:p-0">
           <h1 data-animate className="text-text-quarternary-color">
             From Ideas To {" "} 
             <span className="top-bottom-gradient">Digital Reality</span>
@@ -89,26 +74,27 @@ const TimeLine = () => {
         </div>
 
         {/* right side — each card observed individually */}
-        <div className="w-1/2 ">
-          {whatWeDoCards.map((card) => (
+        <div className="w-full lg:w-1/2 flex flex-col gap-8  ">
+          {timeline.map((t) => (
             <div
               data-animate
-              key={card.title}  
-              className="p-16 lg:p-10 flex flex-col gap-6 items-center justify-center text-center bg-background-color card-shadow rounded-3xl"
+              key={t.id}  
+              className="relative flex flex-col gap-2 border-l-5 border-primary-color pl-8 lg:pl-14 "
             >
-              <div className="size-16 overflow-hidden">
-                <img
-                  src={card.icon}
-                  className="w-full h-full object-cover object-center"
-                  alt="card-icon"
-                />
-              </div>
-              <h1 className="text-primary-color">
-                <Counter end={card.count} suffix={card.suffix} duration={2500} />
-              </h1>
-              <span className="text-base lg:text-lg text-text-secondary-color font-semibold">
-                {card.title}
-              </span>
+
+
+              {/* absolute circle starts */}
+              <div className = "aboslute w-5 h-5 top "></div>
+              <div className = "absolute -left-4 -top-7 size-6 bg-primary-color rounded-full overflow-hidden ">
+                </div>
+
+              {/* absolute circle ends */}
+
+              <h2 className= "text-text-quarternary-color">{t.date}</h2>
+              <h2 className= "text-primary-color">{t.title}</h2>
+              <p className= "text-text-secondary-color">{t.desc}</p>
+
+             
             </div>
           ))}
         </div>
