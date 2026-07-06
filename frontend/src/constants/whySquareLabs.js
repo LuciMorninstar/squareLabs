@@ -18,7 +18,7 @@ export const whySquareLabs = [
     {
         id:3,
         icon: TransparentSvg,
-        title:"transparent communication",
+        title:"transparent cosmmunication",
         desc:"Real-time updated and clear milestone throughout the project life cycle."
     },
 ]
