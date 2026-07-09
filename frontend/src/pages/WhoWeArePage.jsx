@@ -4,6 +4,7 @@ import WhoIsSquareLabs from "../components/WhoIsSquareLabs"
 import OurMissionAndVision from "../components/OurMissionAndVision"
 import OurCoreValues from "../components/OurCoreValues"
 import Glimpses from "../components/Glimpses"
+import MeetTheTeam from "../components/MeetTheTeam"
 
 const WhoWeArePage = () => {
   return (
@@ -13,6 +14,7 @@ const WhoWeArePage = () => {
     <WhoIsSquareLabs/>
     <OurMissionAndVision/>
     <OurCoreValues/>
+    <MeetTheTeam/>
     <Glimpses/>
 
     </>

@@ -2,6 +2,12 @@ import ClientCentricSvg from "../assets/whoWeAre/client-centric.svg?react";
 import Future from "../assets/whoWeAre/future.svg?react";
 import Innovation from "../assets/whoWeAre/innovation.svg?react";
 import Technical from "../assets/whoWeAre/technical.svg?react";
+import pic1 from "../assets/whoWeAre/pic1.jpg"
+import pic2 from "../assets/whoWeAre/pic2.jpg"
+import pic3 from "../assets/whoWeAre/pic3.jpg"
+import pic4 from "../assets/whoWeAre/pic4.jpg"
+import pic5 from "../assets/whoWeAre/pic5.jpg"
+
 
 export const timeline = [
     {
@@ -68,3 +74,63 @@ export const coreValues = [
 }
     
 ]
+
+
+export const meetTheTeam = [
+  {
+    id: 1,
+    name: "James Rai",
+    position: "Chief Executive Officer",
+    profilePic: pic1,
+    desc: "James leads the organization's vision and strategic growth, ensuring every initiative aligns with the company's mission while fostering innovation, collaboration, and long-term success. He works closely with leadership teams to identify new opportunities, inspire company-wide excellence, and build a culture focused on sustainable growth and customer satisfaction."
+  },
+  {
+    id: 2,
+    name: "Sophia Carter",
+    position: "Chief Operating Officer",
+    profilePic: pic2,
+    desc: "Sophia oversees daily operations, streamlining workflows and improving efficiency to ensure projects are delivered on time while maintaining exceptional quality standards. She coordinates cross-functional teams, optimizes internal processes, and ensures operational excellence across every department."
+  },
+  {
+    id: 3,
+    name: "Daniel Kim",
+    position: "Chief Technology Officer",
+    profilePic: pic3,
+    desc: "Daniel drives the company's technical vision, leading development teams and implementing modern technologies that create reliable, scalable, and secure digital solutions. He mentors engineers, evaluates emerging technologies, and ensures every product is built with innovation, performance, and security in mind."
+  },
+  {
+    id: 4,
+    name: "Emily Johnson",
+    position: "Creative Director",
+    profilePic: pic4,
+    desc: "Emily transforms ideas into compelling visual experiences, guiding branding, design, and creative storytelling to deliver engaging and impactful user experiences. She collaborates with designers and marketers to create consistent brand identities that resonate with audiences across all platforms."
+  },
+  {
+    id: 5,
+    name: "Michael Brown",
+    position: "Project Manager",
+    profilePic: pic5,
+    desc: "Michael coordinates teams, manages project timelines, and ensures seamless communication between stakeholders to successfully deliver every milestone. His strong organizational skills help keep projects on schedule while maintaining transparency, quality, and client satisfaction throughout the development process."
+  },
+  {
+    id: 6,
+    name: "Olivia Wilson",
+    position: "Marketing Manager",
+    profilePic: pic1,
+    desc: "Olivia develops marketing strategies that strengthen brand awareness, connect with audiences, and drive sustainable business growth across multiple channels. She analyzes market trends, creates impactful campaigns, and works closely with creative teams to maximize engagement and measurable results."
+  },
+  {
+    id: 7,
+    name: "Ethan Davis",
+    position: "Senior Software Engineer",
+    profilePic: pic2,
+    desc: "Ethan specializes in building high-performance web applications, focusing on clean architecture, optimized performance, and delivering exceptional user experiences. He is passionate about writing maintainable code, solving complex technical challenges, and continuously improving product reliability."
+  },
+  {
+    id: 8,
+    name: "Ava Martinez",
+    position: "Customer Success Manager",
+    profilePic: pic3,
+    desc: "Ava works closely with clients to understand their needs, provide ongoing support, and ensure they achieve maximum value from the company's services. She builds long-term relationships, resolves challenges proactively, and helps customers reach their goals through personalized guidance and exceptional service."
+  }
+];

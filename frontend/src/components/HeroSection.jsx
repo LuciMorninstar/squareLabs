@@ -296,7 +296,7 @@ const HeroSection = () => {
         ref={heroRef}
         className="relative w-full h-[calc(100dvh-60px)] lg:h-[calc(100vh-110px)] overflow-hidden flex items-center justify-center lg:rounded-4xl bg-[#071510]"
       >
-        {/* base gradient */}
+        {/* base gradient */} 
         <div
           className="absolute inset-0"
           style={{
