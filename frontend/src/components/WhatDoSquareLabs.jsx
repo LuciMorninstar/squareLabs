@@ -91,7 +91,7 @@ const WhatDoSquareLabs = () => {
         </div>
 
         {/* ───────── RIGHT SIDE — Image ───────── */}
-        <div className="w-full auto lg:w-[55%] hidden md:block  ">
+        <div className="w-full auto lg:w-[55%] hidden lg:block  ">
           <img
             src={whyImg}
             alt="SquareLabs Team"
