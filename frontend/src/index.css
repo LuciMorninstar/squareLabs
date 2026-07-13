@@ -99,9 +99,67 @@ body::-webkit-scrollbar-thumb{
     height: 280px;
   }
 }
-
-
 /* ------------testimonial ends----------- */
+
+/* animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-up.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* meet the team swiper — cube effect for < sm */
+.team-swiper-wrapper {
+  padding: 20px 0 50px 0; /* extra bottom padding so pagination dots don't overlap the card */
+}
+
+.team-swiper {
+  width: 280px;
+  height: 450px;
+}
+
+.team-swiper-slide {
+  border-radius: 18px;
+  overflow: hidden;
+  background: inherit;
+}
+
+/* cube effect needs opaque faces or it looks glitchy mid-rotation */
+.team-swiper .swiper-cube-shadow {
+  opacity: 0.25;
+}
+
+.team-swiper .swiper-pagination-bullet {
+  background: var(--text-secondary-color, #999);
+  opacity: 0.5;
+}
+
+.team-swiper .swiper-pagination-bullet-active {
+  background: var(--text-quarternary-color, #fff);
+  opacity: 1;
+}
+
+/* grid hover — smooth, no stutter */
+.team-card-hover {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, box-shadow;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.team-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
+}
+
+
 
 
 @layer base{
@@ -132,7 +190,11 @@ body::-webkit-scrollbar-thumb{
   --color-quarternary-color:#062116; /*for what we do card bg*/
   --color-footer-background-color:#06150D;
   --color-fifth-color:#1e3011;
+
   --color-feature-bg: #ebf3e4;
+  --color-sixth-color:#183018;
+  --color-seventh-color:#ecf4e4;
+
 
 
   /* for linear gradient */
@@ -184,5 +246,6 @@ body::-webkit-scrollbar-thumb{
 .button-style{
   @apply w-max  flex flex-row gap-0 sm:gap-3 lg:gap-4 items-center justify-center rounded-4xl bg-primary-color px-3 py-4 sm:px-4 sm:py-4 lg:px-6 lg:py-4
 }
+
 
 }

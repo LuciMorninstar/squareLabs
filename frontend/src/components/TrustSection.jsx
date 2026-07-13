@@ -20,7 +20,7 @@ const TrustSection = () => {
           if (entry.isIntersecting) {
             entry.target.style.opacity = "1";
             entry.target.style.transform = "translateY(0)";
-            observer.unobserve(entry.target); // fire once per element
+            observer.unobserve(entry.target); 
           }
         });
       },
@@ -31,7 +31,7 @@ const TrustSection = () => {
       el.style.opacity = "0";
       el.style.transform = "translateY(30px)";
       el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
-      observer.observe(el); // each element observed individually
+      observer.observe(el); 
     });
 
     return () => observer.disconnect();

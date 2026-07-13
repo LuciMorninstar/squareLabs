@@ -5,6 +5,8 @@ import StartAProject from "./components/StartAProject"
 import ExploreOurWork from "./components/ExploreOurWork"
 import NotFoundPage from './pages/NotFoundPage'
 import WhatWeDoPage from './pages/WhatWeDoPage'
+import WhoWeArePage from './pages/WhoWeArePage'
+import OurWorkPage from './pages/OurWorkPage'
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/start-a-project" element={<StartAProject/>}/>
         <Route path="/explore-our-work" element={<ExploreOurWork/>}/>
         <Route path="/what-we-do" element={<WhatWeDoPage/>}/>
+        <Route path="/who-we-are" element={<WhoWeArePage/>}/>
+        <Route path="/our-work" element={<OurWorkPage/>}/>
 
         
         </Route>

@@ -38,13 +38,13 @@ const Navbar = () => {
       <div className="flex flex-row gap-8 items-center justify-center">
 
         {/* Logo */}
-        <div className="w-16 h-16 overflow-hidden">
+        <Link to ="/" className="w-16 h-16 overflow-hidden">
           <img
             src={companyLogo}
             alt="squarelabs-logo"
             className="w-full h-full object-fit object-center"
           />
-        </div>
+        </Link>
 
         {/* Nav items */}
         <div className="hidden lg:flex flex-row gap-10">
