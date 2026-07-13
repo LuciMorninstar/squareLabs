@@ -1,48 +1,28 @@
-import { IoArrowForward } from "react-icons/io5";
-import { useRef, useLayoutEffect } from "react";
-import gsap from "gsap";
+import { useRef, useEffect, useLayoutEffect } from "react";
 import WidthWrapper from "../components/WidthWrapper";
-import { Link } from "react-router";
-import OurWorkbgImage from "../assets/ourWorkPage/OurWorkbgImage.png";
 
 const EPlatformRedesign = () => {
   const heroRef = useRef(null);
-  const headingRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const buttonsRef = useRef(null);
-  const imageRef = useRef(null);
 
-  // entrance animation
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+  // scroll-reveal animation (data-animate + IntersectionObserver, matches rest of site)
+  useEffect(() => {
+    const els = heroRef.current?.querySelectorAll("[data-animate]");
+    if (!els?.length) return;
 
-      tl.fromTo(
-        headingRef.current,
-        { y: 60, opacity: 0, filter: "blur(10px)" },
-        { y: 0, opacity: 1, filter: "blur(0px)", duration: 1 },
-      )
-        .fromTo(
-          descriptionRef.current,
-          { y: 30, opacity: 0, filter: "blur(10px)" },
-          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.8 },
-          "-=0.5",
-        )
-        // .fromTo(
-        //   buttonsRef.current.children,
-        //   { y: 25, opacity: 0, scale: 0.95 },
-        //   { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.7)" },
-        //   "-=0.35",
-        // )
-        .fromTo(
-          imageRef.current,
-          { y: 60, opacity: 0, scale: 0.94 },
-          { y: 0, opacity: 1, scale: 1, duration: 1 },
-          "-=0.9",
-        );
-    }, heroRef);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
 
-    return () => ctx.revert();
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   // cursor-follow spotlight
@@ -82,16 +62,9 @@ const EPlatformRedesign = () => {
     <WidthWrapper>
       <div
         ref={heroRef}
-        className="relative w-full max-lg:min-h-screen lg:h-[calc(100vh-40px)] overflow-hidden flex flex-col gap-8 items-center justify-center lg:flex-row lg:rounded-4xl py-10 lg:py-0"
+        className="relative w-full max-lg:min-h-screen lg:h-[calc(100vh-40px)] overflow-hidden flex flex-col-reverse gap-8 items-center justify-center lg:flex-row lg:rounded-4xl py-10 lg:py-0 inset-0 bg-gradient-background"
       >
-        {/* base gradient background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(120% 90% at 50% 0%, rgba(15,157,69,0.18) 0%, rgba(7,21,16,0) 55%), linear-gradient(180deg, #081B13 0%, #071510 60%, #050F0B 100%)",
-          }}
-        />
+      
 
         {/* cursor-follow spotlight */}
         <div
@@ -108,7 +81,10 @@ const EPlatformRedesign = () => {
             <h4 className="top-bottom-gradient font-semibold uppercase">
               Spotlight Project
             </h4>
-            <h1 ref={headingRef} className="text-default-color">
+            <h1
+              data-animate
+              className="text-default-color reveal-up"
+            >
               E-commerce Platform <span className="">Redesign</span>
             </h1>
           </div>
@@ -118,8 +94,8 @@ const EPlatformRedesign = () => {
               The Problem
             </h4>
             <p
-              ref={descriptionRef}
-              className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full "
+              data-animate
+              className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full reveal-up"
             >
               Building digital experiences that solve real business problems.
               From websites to mobile apps, we design and develop solutions that
@@ -131,8 +107,8 @@ const EPlatformRedesign = () => {
               The Solutions
             </h4>
             <p
-              ref={descriptionRef}
-              className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full "
+              data-animate
+              className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full reveal-up"
             >
               Building digital experiences that solve real business problems.
               From websites to mobile apps, we design and develop solutions that
@@ -143,7 +119,10 @@ const EPlatformRedesign = () => {
         {/* /left content */}
 
         {/* right content */}
-        <div className="relative max-lg:px-6  w-full lg:w-1/2 flex flex-col items-center  order-1 lg:order-2  gap-4 lg:gap-6">
+        <div
+          data-animate
+          className="relative max-lg:px-6  w-full lg:w-1/2 flex flex-col items-center  order-1 lg:order-2  gap-4 lg:gap-6 reveal-up"
+        >
           {/* top cards */}
           <div className="grid grid-cols-2 gap-4 lg:gap-8">
             {cards.slice(0, 2).map((card) => (
@@ -169,7 +148,7 @@ const EPlatformRedesign = () => {
           {/* bottom card */}
           <div className="w-full">
             {cards.slice(2).map((card) => (
-              <div className="bg-primary-color sm:w-[70%] md:w-[55%] lg:w-[90%] xl:[w-60%] mx-auto rounded-2xl flex flex-col items-center  justify-center gap-6 py-4 lg:py-6">
+              <div className="bg-primary-color sm:w-[70%] md:w-[55%] lg:w-[90%] xl:w-[72%] mx-auto rounded-2xl flex flex-col items-center  justify-center gap-6 py-4 lg:py-6">
                 <span className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full text-center">
                   {card?.title}
                 </span>

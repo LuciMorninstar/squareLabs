@@ -16,7 +16,6 @@ const NotFoundPage = () => {
       
       {/* bottom blur */}
       <div className = "h-screen w-full absolute top-1/2 mt-10   blur-[300px] bg-text-secondary-color  rounded-[50%] ">
-adsf
       </div>
         <div></div>
         
@@ -26,7 +25,7 @@ adsf
             <h3>Page Not Found</h3>
             <span className = "text-xl  text-center text-text-tertiary-color">We can't find the page you are looking for. <br/> Probably the link is broken.</span>
 
-            <Link  to = "/start-a-project" className = "flex flex-row gap-4 items-center justify-center rounded-4xl bg-linear-to-r from-primary-color to-secondary-color lg:px-6 lg:py-4 px-4 py-3 self-center transition-all duration-300 ease-in">
+            <Link  to = "/" className = "flex flex-row gap-4 items-center justify-center rounded-4xl bg-linear-to-r from-primary-color to-secondary-color lg:px-6 lg:py-4 px-4 py-3 self-center transition-all duration-300 ease-in">
                                
             <span className = "text-default-color text-base lg:text-xl font-outfit font-light ">Take me home</span>
             <IoArrowForward className = "text-default-color text-3xl font-light" />

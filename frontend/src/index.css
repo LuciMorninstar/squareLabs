@@ -253,6 +253,10 @@ body::-webkit-scrollbar-thumb{
 
 @layer utilities{
 
+ .bg-gradient-background{
+    background-image: radial-gradient(120% 90% at 50% 0%, rgba(15,157,69,0.18) 0%, rgba(7,21,16,0) 55%), linear-gradient(180deg, #081B13 0%, #071510 60%, #050F0B 100%);
+  }
+
   .top-bottom-gradient{
     @apply bg-linear-to-b from-primary-color to-secondary-color text-transparent bg-clip-text
 }

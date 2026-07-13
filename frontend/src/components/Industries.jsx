@@ -1,4 +1,4 @@
-import { ourApproaches } from "../constants/ourApproaches.js";
+
 import { useEffect, useRef } from "react";
 import { IndustriesWorkedWith } from "../constants/ourWorkPage.js";
 
@@ -48,7 +48,7 @@ const Industries = () => {
 
         {/* for screen larger than lg size */}
         <div className="hidden lg:grid grid-cols-4 gap-4">
-          {IndustriesWorkedWith.map((industry, i) => (
+          {IndustriesWorkedWith.map((industry) => (
             <div
               key={industry?.id}
               className="lg:px-16 lg:py-14 xl:px-20 xl:py-16 flex flex-col justify-center items-center gap-6 bg-default-color rounded-2xl shadow-lg"
@@ -69,7 +69,7 @@ const Industries = () => {
         {/* for screen smaller than lg size */}
 
         <div className="max-lg:block lg:hidden marquee-wrapper overflow-hidden">
-          <div className="marquee-track flex items-center gap-6 sm:gap-16">
+          <div className="marquee-track flex items-center gap-6 sm:gap-8">
             {/* first set */}
             {IndustriesWorkedWith.map((industry) => (
               <div
