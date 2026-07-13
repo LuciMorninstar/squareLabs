@@ -1,11 +1,11 @@
 // src/components/Navbar/Navbar.jsx
 import { useRef, useState } from "react";
-import companyLogo from "../assets/company-logo.png";
-import { Link } from "react-router";
 import { IoArrowForward } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import MegaMenu from "./MegaMenu";
+import { Link } from "react-router";
+import companyLogo from "../assets/company-logo.png";
 import { megaMenuData } from "../constants/megaMenuData";
+import MegaMenu from "./MegaMenu";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
