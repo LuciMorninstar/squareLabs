@@ -141,7 +141,7 @@ const Navbar = () => {
         {/* for links */}
         <div className="flex flex-col gap-2 mt-10">
           {
-            navItems.map((item, i) => (
+            navItems.map((item) => (
               <Link
                 key={item.title}
                 to={item.link}

@@ -62,7 +62,7 @@ const MeetTheTeam = () => {
 
           {/* sm and up: grid */}
           <div className="hidden sm:grid grid-cols-2 xl:grid-cols-3 gap-5">
-            {meetTheTeam.map((team, i) => (
+            {meetTheTeam.map((team) => (
               <div
                 key={team.id}
                 data-animate

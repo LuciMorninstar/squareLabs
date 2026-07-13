@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import WidthWrapper from "./WidthWrapper";
-import whyUsBg from "../assets/whyusbg.png";
+
 import { whyUsCards } from "../constants/whyUs";
 import { IoChevronDown } from "react-icons/io5";
 
