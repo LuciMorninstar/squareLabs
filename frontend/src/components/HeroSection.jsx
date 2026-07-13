@@ -407,7 +407,7 @@ const HeroSection = () => {
             </Link>
 
             <Link
-              to="/explore-our-work"
+              to="/our-work"
               className="w-max flex flex-row gap-2 lg:gap-4 items-center justify-center rounded-4xl border-2 border-[#8CC63F]/30 px-3 py-4 sm:py-4 lg:px-6 lg:py-4 text-[#EAF3EC] hover:border-[#8CC63F]/80 transition-all duration-200 ease-in-out"
             >
               <span className="font-outfit font-light text-base lg:text-xl">Explore our Work</span>

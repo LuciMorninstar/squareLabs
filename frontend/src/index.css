@@ -159,6 +159,36 @@ body::-webkit-scrollbar-thumb{
   box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
 }
 
+/* ---------Industries-worked---with----marquee---styles-------- */
+.marquee-wrapper {
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 
 
 

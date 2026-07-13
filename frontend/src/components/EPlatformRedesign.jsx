@@ -28,12 +28,12 @@ const EPlatformRedesign = () => {
           { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.8 },
           "-=0.5",
         )
-        .fromTo(
-          buttonsRef.current.children,
-          { y: 25, opacity: 0, scale: 0.95 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.7)" },
-          "-=0.35",
-        )
+        // .fromTo(
+        //   buttonsRef.current.children,
+        //   { y: 25, opacity: 0, scale: 0.95 },
+        //   { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.7)" },
+        //   "-=0.35",
+        // )
         .fromTo(
           imageRef.current,
           { y: 60, opacity: 0, scale: 0.94 },
@@ -63,16 +63,26 @@ const EPlatformRedesign = () => {
   }, []);
 
   const cards = [
-    {id:1, title:"User Engagement", value:45, desc:"Active session per user"},
-    {id:2, title:"Conversion Rate", value:30, desc:"Mobile checkout sucess"},
-    {id:3, title:"Core Web Vitals", value:2, desc:"Faster Experience"},
-  ]
+    {
+      id: 1,
+      title: "User Engagement",
+      value: 45,
+      desc: "Active session per user",
+    },
+    {
+      id: 2,
+      title: "Conversion Rate",
+      value: 30,
+      desc: "Mobile checkout sucess",
+    },
+    { id: 3, title: "Core Web Vitals", value: 2, desc: "Faster Experience" },
+  ];
 
   return (
     <WidthWrapper>
       <div
         ref={heroRef}
-        className="relative w-full h-[calc(100dvh-60px)] lg:h-[calc(100vh-110px)] overflow-hidden flex flex-col lg:flex-row lg:rounded-4xl py-10 lg:py-0"
+        className="relative w-full max-lg:min-h-screen lg:h-[calc(100vh-40px)] overflow-hidden flex flex-col gap-8 items-center justify-center lg:flex-row lg:rounded-4xl py-10 lg:py-0"
       >
         {/* base gradient background */}
         <div
@@ -95,19 +105,18 @@ const EPlatformRedesign = () => {
         {/* left content */}
         <div className="relative z-10  h-full w-full lg:w-1/2 flex flex-col max-lg:items-center  gap-4 lg:gap-8 justify-center px-6 lg:px-12 text-left order-2 lg:order-1 ">
           <div className="flex flex-col gap-3">
-            <h3 className="top-bottom-gradient font-semibold uppercase">
+            <h4 className="top-bottom-gradient font-semibold uppercase">
               Spotlight Project
-            </h3>
+            </h4>
             <h1 ref={headingRef} className="text-default-color">
-              E-commerce Platform{" "}
-              <span className="">Redesign</span>
+              E-commerce Platform <span className="">Redesign</span>
             </h1>
           </div>
 
-          <div className = "flex flex-col gap-3">
-            <h3 className="top-bottom-gradient font-semibold uppercase">
+          <div className="flex flex-col gap-3">
+            <h4 className="top-bottom-gradient font-semibold uppercase">
               The Problem
-            </h3>
+            </h4>
             <p
               ref={descriptionRef}
               className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full "
@@ -117,10 +126,10 @@ const EPlatformRedesign = () => {
               create measurable impact.
             </p>
           </div>
-          <div className = "flex flex-col gap-3">
-            <h3 className="top-bottom-gradient font-semibold uppercase">
+          <div className="flex flex-col gap-3">
+            <h4 className="top-bottom-gradient font-semibold uppercase">
               The Solutions
-            </h3>
+            </h4>
             <p
               ref={descriptionRef}
               className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full "
@@ -133,16 +142,51 @@ const EPlatformRedesign = () => {
         </div>
         {/* /left content */}
 
-        {/* right content — single composited mockup image */}
-        <div className="relative z-10 w-full lg:w-1/2 flex items-center justify-center  order-1 lg:order-2 grid flex flex-col gap-4 lg:gap-6">
-        {/* top cards */}
-        <div className = "grid grid-cols-2">
+        {/* right content */}
+        <div className="relative max-lg:px-6  w-full lg:w-1/2 flex flex-col items-center  order-1 lg:order-2  gap-4 lg:gap-6">
+          {/* top cards */}
+          <div className="grid grid-cols-2 gap-4 lg:gap-8">
+            {cards.slice(0, 2).map((card) => (
+              <div
+                key={card?.id}
+                className=" glassmorphism-effect flex flex-col text-center gap-6 px-4 py-4 lg:px-6 lg:py-8 rounded-2xl"
+              >
+                <span className="text-text-secondary-color text-sm  lg:text-base xl:text-lg w-full">
+                  {card?.title}
+                </span>
 
+                <div className="flex flex-col gap-4">
+                  <h1 className="top-bottom-gradient">+{card?.value}%</h1>
+                  <span className="text-text-secondary-color text-sm  lg:text-base xl:text-lg w-full">
+                    {card?.desc}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* /top cards */}
 
+          {/* bottom card */}
+          <div className="w-full">
+            {cards.slice(2).map((card) => (
+              <div className="bg-primary-color sm:w-[70%] md:w-[55%] lg:w-[90%] xl:[w-60%] mx-auto rounded-2xl flex flex-col items-center  justify-center gap-6 py-4 lg:py-6">
+                <span className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full text-center">
+                  {card?.title}
+                </span>
+
+                <div className="flex flex-col gap-4 items-center">
+                  <h1 className="text-default-color">{card?.value}X</h1>
+                  <span className="text-text-eight-color text-sm  lg:text-base xl:text-lg w-full">
+                    {card?.desc}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* /bottom card */}
         </div>
-        {/* /top cards */}
-        
-        </div>
+
         {/* /right content */}
       </div>
     </WidthWrapper>

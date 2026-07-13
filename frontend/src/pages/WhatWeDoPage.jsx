@@ -14,7 +14,7 @@ const WhatWeDoPage = () => {
   console.log(whatWeDoPageData, "Whatwedo"
   )
   return (
-    <>s
+    <>
    <WhatWeDoHero/>
    <WhatWeDoHero2/>
    <div className = "flex flex-col gap-3 ">
