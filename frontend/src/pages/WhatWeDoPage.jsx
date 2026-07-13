@@ -6,6 +6,9 @@ import WhatWeDoCards from '../components/WhatWeDoCards'
 import {whatWeDoPageData} from "../constants/whatWeDoPageData"
 import OurApproach from '../components/OurApproach'
 import WhySquareLabs from '../components/WhySquareLabs'
+import WhoIsSquareLabs from '../components/WhoIsSquareLabs'
+import OurMissionAndVision from "../components/OurMissionAndVision"
+import Collaborate from '../components/Collaborate'
 
 const WhatWeDoPage = () => {
   console.log(whatWeDoPageData, "Whatwedo"
@@ -25,6 +28,8 @@ const WhatWeDoPage = () => {
 
    <OurApproach/>
    <WhySquareLabs/>
+   <Collaborate/>
+
 
    
     </>

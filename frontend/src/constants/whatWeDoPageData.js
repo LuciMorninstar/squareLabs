@@ -121,3 +121,19 @@ export const whatWeDoPageData = [
     ],
   },
 ];
+
+
+
+export const ourMissionAndVisionData = [
+  {
+    id:1,
+    title:"Our Mission",
+    desc:"Helping businesses transform ideas into impactful digital solutions that simplify lives, enhance experiences, and drive sustainable growth. We believe in technology as a catalyst for positive change."
+  },
+  {
+    id:2,
+    title:"Our Vision",
+    desc:"To become a trusted global technology partner recognized for engineering excellence and human-centered design. We aim to set the standard for digital innovation in the mid-market space."
+  },
+
+]

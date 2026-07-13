@@ -296,7 +296,7 @@ const HeroSection = () => {
         ref={heroRef}
         className="relative w-full h-[calc(100dvh-60px)] lg:h-[calc(100vh-110px)] overflow-hidden flex items-center justify-center lg:rounded-4xl bg-[#071510]"
       >
-        {/* base gradient */}
+        {/* base gradient */} 
         <div
           className="absolute inset-0"
           style={{
@@ -397,24 +397,24 @@ const HeroSection = () => {
             ref={buttonsRef}
             className="pointer-events-auto w-full flex flex-row max-sm:gap-2 items-center sm:flex-row gap-2 sm:gap-6 lg:gap-6 xl:gap-8 justify-center px-3 mt-2"
           >
-            <Link
-              to="/start-a-project"
-              className="group relative inline-flex items-center gap-2 rounded-4xl px-6 py-4 font-outfit font-light text-base lg:text-xl text-[#06140D] overflow-hidden"
-              style={{ background: `linear-gradient(120deg, ${GREEN_B}, ${GREEN_A})` }}
-            >
-              <span>Start a Project</span>
-              <IoArrowForward className="text-xl sm:text-2xl group-hover:translate-x-2 duration-200 transition-transform ease-in-out" />
+           <Link to="/start-a-project" className="group button-style">
+              <span className="text-default-color text-base lg:text-xl font-outfit font-light">
+                Start a Project
+              </span>
+              <IoArrowForward className="text-xl text-default-color sm:text-2xl group-hover:translate-x-2 duration-200 transition-transform ease-in-out" />
             </Link>
 
             <Link
-              to="/explore-our-work"
-              className="w-max flex flex-row gap-2 lg:gap-4 items-center justify-center rounded-4xl border-2 border-[#8CC63F]/30 px-3 py-4 sm:py-4 lg:px-6 lg:py-4 text-[#EAF3EC] hover:border-[#8CC63F]/80 transition-all duration-200 ease-in-out"
-            >
-              <span className="font-outfit font-light text-base lg:text-xl">Explore our Work</span>
-              <GotoSvg className="w-5 h-5 text-[#EAF3EC]" />
-            </Link>
+                         to="/our-work"
+                         className="w-max flex flex-row gap-2 lg:gap-4 items-center justify-center rounded-4xl border-2 border-default-color px-3 py-4 sm:py-4 lg:px-6 lg:py-4 hover:border-text-primary-color transition-all duration-200 ease-in-out"
+                       >
+                         <span className="text-default-color text-base lg:text-xl font-outfit font-light">
+                            Explore Our Work
+                         </span>
+                         <GotoSvg className="w-5 h-5 text-white" />
+                       </Link>
           </div>
-        </div>
+        </div>\
       </div>
     </WidthWrapper>
   );

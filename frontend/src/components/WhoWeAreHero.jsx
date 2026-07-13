@@ -1,7 +1,5 @@
 import { IoRocketOutline } from "react-icons/io5";
-import { RxDotFilled } from "react-icons/rx";
 
-import GotoSvg from "../assets/svg/gotosvg.svg?react";
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import WidthWrapper from "../components/WidthWrapper";

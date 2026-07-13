@@ -42,7 +42,7 @@ const OurInsights = () => {
 
   return (
     <SecondWidthWrapper>
-      <div ref={sectionRef} className="w-full xl:mt-10 2xl:h-[calc(100vh-160px)]">
+      <div id="our-insights" ref={sectionRef} className="w-full xl:mt-10 2xl:h-[calc(100vh-160px)]">
 
         {/* Header */}
         <div data-animate className="flex flex-row justify-between items-center mb-8 xl:mb-14">
