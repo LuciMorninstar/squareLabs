@@ -43,8 +43,8 @@ const Glimpses = () => {
         className=" w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 "
       >
         {/* left side */}
-        <div className="w-full  flex flex-col justify-center items-center gap-2 lg:gap-4 lg:p-0">
-          <h1 data-animate className="text-text-quarternary-color text-center">
+        <div className="w-full  flex flex-col justify-center  gap-2 lg:gap-4 lg:p-0">
+          <h1 data-animate className="text-text-quarternary-color ">
             Catch the glimpses of <br />{" "}
             <span className="top-bottom-gradient">Life At SquareLabs</span>
           </h1>
