@@ -40,7 +40,7 @@ const Footer = () => {
     <WidthWrapper>
       <div
         ref={footerRef}
-        className="py-16 px-6 lg:px-16 w-full bg-footer-background-color xl:rounded-4xl flex flex-col gap-8 lg:gap-24"
+        className="py-16 px-6 lg:px-16 w-full bg-footer-background-color  flex flex-col gap-8 lg:gap-24"
       >
         {/* top part */}
         <div className="flex flex-col-reverse xl:flex-row gap-4 lg:flex-row lg:justify-between items-center">

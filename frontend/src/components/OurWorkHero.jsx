@@ -66,7 +66,7 @@ const OurWorkHero = () => {
     <WidthWrapper>
       <div
         ref={heroRef}
-        className="relative w-full h-[calc(100dvh-60px)] lg:h-[calc(100vh-110px)] overflow-hidden flex flex-col lg:flex-row lg:rounded-4xl py-10 lg:py-0 inset-0 bg-gradient-background"
+        className="hero-section relative w-full overflow-hidden flex flex-col lg:flex-row  py-10 lg:py-0 inset-0 bg-gradient-background"
       >
      
 

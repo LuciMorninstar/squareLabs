@@ -91,6 +91,8 @@ const Navbar = () => {
                 <MegaMenu
                   visible={openMenu === item.title}
                   categories={megaMenuData[item.title]}
+                  onClose={() => setOpenMenu(null)}
+
                 />
               )}
             </Link>

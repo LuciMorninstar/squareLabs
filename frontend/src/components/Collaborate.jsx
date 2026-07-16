@@ -37,7 +37,7 @@ const Collaborate = () => {
     <WidthWrapper>
       <div
         ref={sectionRef}
-        className="relative w-full py-8 lg:py-26 flex flex-col gap-5 items-center justify-center text-center lg:rounded-3xl overflow-hidden bg-gradient-background "
+        className="relative w-full py-8 lg:py-26 flex flex-col gap-5 items-center justify-center text-center overflow-hidden bg-gradient-background "
       >
         {/* absolute bg */}
         {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden">

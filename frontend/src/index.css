@@ -218,7 +218,7 @@ body::-webkit-scrollbar-thumb{
   --color-secondary-color:rgb(140, 198, 63);
   --color-tertiary-color:rgb(6, 21, 13); /* for footer background */
   --color-quarternary-color:#062116; /*for what we do card bg*/
-  --color-footer-background-color:#06150D;
+  --color-footer-background-color:#101410;
   --color-fifth-color:#1e3011;
   --color-sixth-color:#183018;
   --color-seventh-color:#ecf4e4;
@@ -261,6 +261,10 @@ body::-webkit-scrollbar-thumb{
     @apply bg-linear-to-b from-primary-color to-secondary-color text-transparent bg-clip-text
 }
 
+.hero-section{
+  @apply h-[calc(100dvh-60px)] lg:h-[calc(100vh-70px)]
+}
+
 .card-shadow{
   @apply shadow-[-4px_4px_8px_0px_rgba(0,0,0,0.1)]
 }
@@ -277,6 +281,30 @@ body::-webkit-scrollbar-thumb{
 .button-style{
   @apply w-max  flex flex-row gap-0 sm:gap-3 lg:gap-4 items-center justify-center rounded-4xl bg-primary-color px-3 py-4 sm:px-4 sm:py-4 lg:px-6 lg:py-4
 }
+.footer-background{
+  background: linear-gradient(135deg, #8CC63F 0%, #4FA95A 100%);
+}
 
+/* ----------cursor-----glow------------------- */
+/* ----------cursor-glow------------------- */
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background: radial-gradient(
+    300px circle at var(--x, 50%) var(--y, 50%),
+    rgba(15, 157, 69, 0.3),
+    rgba(15, 157, 69, 0.04) 40%,
+    transparent 70%
+  );
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .cursor-glow {
+    display: block;
+  }
+}
 
 }

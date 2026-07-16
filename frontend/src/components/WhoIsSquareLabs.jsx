@@ -40,7 +40,7 @@ const WhoIsSquareLabs = () => {
     <WidthWrapper>
       <div
         ref={sectionRef}
-        className="relative w-full mt-8 overflow-hidden px-5 py-12 lg:px-16 lg:py-24 lg:rounded-4xl flex flex-col gap-10 2xl:gap-20 bg-gradient-background"
+        className="relative w-full mt-8 overflow-hidden px-5 py-12 lg:px-16 lg:py-24  flex flex-col gap-10 2xl:gap-20 bg-gradient-background"
       >
         {/* absolute image */}
         {/* <div className="absolute inset-0 overflow-hidden lg:rounded-4xl rounded-none">

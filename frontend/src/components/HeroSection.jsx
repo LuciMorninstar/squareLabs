@@ -25,7 +25,11 @@ const HeroSection = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.fromTo(eyebrowRef.current, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 })
+      tl.fromTo(
+        eyebrowRef.current,
+        { y: 16, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6 },
+      )
         .fromTo(
           heading1Ref.current,
           { y: 70, opacity: 0, filter: "blur(8px)" },
@@ -47,7 +51,14 @@ const HeroSection = () => {
         .fromTo(
           buttonsRef.current.children,
           { y: 20, opacity: 0, scale: 0.95 },
-          { y: 0, opacity: 1, scale: 1, stagger: 0.12, duration: 0.6, ease: "back.out(1.7)" },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            stagger: 0.12,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+          },
           "-=0.3",
         );
     }, heroRef);
@@ -87,7 +98,9 @@ const HeroSection = () => {
     camera.position.set(0, 0, isMobile ? 13 : 11);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+    renderer.setPixelRatio(
+      Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2),
+    );
     renderer.setSize(width, height);
     mount.appendChild(renderer.domElement);
 
@@ -148,7 +161,11 @@ const HeroSection = () => {
       const mesh = new THREE.Mesh(geo, mat);
       const wire = new THREE.LineSegments(
         new THREE.EdgesGeometry(geo),
-        new THREE.LineBasicMaterial({ color: colorB, transparent: true, opacity: 0.8 }),
+        new THREE.LineBasicMaterial({
+          color: colorB,
+          transparent: true,
+          opacity: 0.8,
+        }),
       );
       mesh.add(wire);
       mesh.position.set(tx, ty - 4, tz); // start low, build upward
@@ -157,7 +174,9 @@ const HeroSection = () => {
 
       return {
         mesh,
-        i, j, k,
+        i,
+        j,
+        k,
         target: { x: tx, y: ty, z: tz },
         restZ: tz,
         liftZ: 0,
@@ -166,8 +185,13 @@ const HeroSection = () => {
     });
 
     // orthogonal neighbor links only -> lattice/circuit feel
-    const linkMat = new THREE.LineBasicMaterial({ color: colorA, transparent: true, opacity: 0.16 });
-    const findCell = (i, j, k) => cubeData.find((c) => c.i === i && c.j === j && c.k === k);
+    const linkMat = new THREE.LineBasicMaterial({
+      color: colorA,
+      transparent: true,
+      opacity: 0.16,
+    });
+    const findCell = (i, j, k) =>
+      cubeData.find((c) => c.i === i && c.j === j && c.k === k);
     cubeData.forEach((c) => {
       [
         findCell(c.i + 1, c.j, c.k),
@@ -177,7 +201,11 @@ const HeroSection = () => {
         if (!neighbor) return;
         const geo = new THREE.BufferGeometry().setFromPoints([
           new THREE.Vector3(c.target.x, c.target.y, c.target.z),
-          new THREE.Vector3(neighbor.target.x, neighbor.target.y, neighbor.target.z),
+          new THREE.Vector3(
+            neighbor.target.x,
+            neighbor.target.y,
+            neighbor.target.z,
+          ),
         ]);
         group.add(new THREE.Line(geo, linkMat));
       });
@@ -199,7 +227,9 @@ const HeroSection = () => {
         ease: "power3.out",
       });
       gsap.to(c.mesh.scale, {
-        x: 1, y: 1, z: 1,
+        x: 1,
+        y: 1,
+        z: 1,
         duration: 0.9,
         delay: 0.15 + idx * 0.045,
         ease: "back.out(1.6)",
@@ -286,7 +316,8 @@ const HeroSection = () => {
         c.mesh.material.dispose();
       });
       renderer.dispose();
-      if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement);
+      if (mount.contains(renderer.domElement))
+        mount.removeChild(renderer.domElement);
     };
   }, []);
 
@@ -294,9 +325,9 @@ const HeroSection = () => {
     <WidthWrapper>
       <div
         ref={heroRef}
-        className="relative w-full h-[calc(100dvh-60px)] lg:h-[calc(100vh-110px)] overflow-hidden flex items-center justify-center lg:rounded-4xl bg-[#071510]"
+        className="hero-section relative w-full  overflow-hidden flex items-center justify-center bg-[#071510]"
       >
-        {/* base gradient */} 
+        {/* base gradient */}
         <div
           className="absolute inset-0"
           style={{
@@ -304,7 +335,6 @@ const HeroSection = () => {
               "radial-gradient(120% 90% at 50% 0%, rgba(15,157,69,0.18) 0%, rgba(7,21,16,0) 55%), linear-gradient(180deg, #081B13 0%, #071510 60%, #050F0B 100%)",
           }}
         />
-
         {/* cursor-follow spotlight */}
         <div
           ref={spotlightRef}
@@ -314,7 +344,6 @@ const HeroSection = () => {
               "radial-gradient(420px circle at var(--mx, 50%) var(--my, 30%), rgba(140,198,63,0.13), transparent 70%)",
           }}
         />
-
         {/* blueprint grid */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -322,37 +351,36 @@ const HeroSection = () => {
             backgroundImage:
               "linear-gradient(rgba(234,243,236,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(234,243,236,0.6) 1px, transparent 1px)",
             backgroundSize: "44px 44px",
-            maskImage: "radial-gradient(80% 60% at 50% 30%, black 40%, transparent 90%)",
+            maskImage:
+              "radial-gradient(80% 60% at 50% 30%, black 40%, transparent 90%)",
           }}
         />
-
         {/* HUD corner brackets */}
-        {["top-3 left-3 border-t-2 border-l-2", "top-3 right-3 border-t-2 border-r-2", "bottom-3 left-3 border-b-2 border-l-2", "bottom-3 right-3 border-b-2 border-r-2"].map(
-          (cls, idx) => (
-            <div
-              key={idx}
-              className={`pointer-events-none absolute z-[2] w-5 h-5 lg:w-7 lg:h-7 border-[#8CC63F]/40 ${cls}`}
-            />
-          ),
-        )}
-
+        {[
+          "top-3 left-3 border-t-2 border-l-2",
+          "top-3 right-3 border-t-2 border-r-2",
+          "bottom-3 left-3 border-b-2 border-l-2",
+          "bottom-3 right-3 border-b-2 border-r-2",
+        ].map((cls, idx) => (
+          <div
+            key={idx}
+            className={`pointer-events-none absolute z-[2] w-5 h-5 lg:w-7 lg:h-7 border-[#8CC63F]/40 ${cls}`}
+          />
+        ))}
         {/* live coordinate readout */}
         <div
           className={`pointer-events-none absolute z-[2] left-5 bottom-5 font-mono text-[10px] lg:text-xs tracking-wider text-[#8CC63F]/70 transition-opacity duration-300 ${showCoord ? "opacity-100" : "opacity-0"}`}
         >
           <span ref={coordRef}>X:0.00 Y:0.00</span>
         </div>
-
         {/* rotated edge tab */}
         <div className="pointer-events-none absolute z-[2] right-3 top-1/2 -translate-y-1/2 rotate-90 origin-right hidden lg:block">
           <span className="font-mono text-[10px] tracking-[0.3em] text-[#8CC63F]/50 whitespace-nowrap">
             SQUARELABS / STACK_01
           </span>
         </div>
-
         {/* three.js cube lattice */}
         <div ref={canvasWrapRef} className="absolute inset-0 z-[1]" />
-
         {/* content */}
         <div className="max-sm:mt-16 relative z-10 w-full flex flex-col gap-4 lg:gap-7 items-center justify-center text-center px-4 pointer-events-none">
           <span
@@ -371,7 +399,9 @@ const HeroSection = () => {
               We Engineer{" "}
               <span
                 className="bg-clip-text text-transparent"
-                style={{ backgroundImage: `linear-gradient(120deg, ${GREEN_B}, ${GREEN_A})` }}
+                style={{
+                  backgroundImage: `linear-gradient(120deg, ${GREEN_B}, ${GREEN_A})`,
+                }}
               >
                 Square Products
               </span>
@@ -397,7 +427,7 @@ const HeroSection = () => {
             ref={buttonsRef}
             className="pointer-events-auto w-full flex flex-row max-sm:gap-2 items-center sm:flex-row gap-2 sm:gap-6 lg:gap-6 xl:gap-8 justify-center px-3 mt-2"
           >
-           <Link to="/start-a-project" className="group button-style">
+            <Link to="/start-a-project" className="group button-style">
               <span className="text-default-color text-base lg:text-xl font-outfit font-light">
                 Start a Project
               </span>
@@ -405,16 +435,17 @@ const HeroSection = () => {
             </Link>
 
             <Link
-                         to="/our-work"
-                         className="w-max flex flex-row gap-2 lg:gap-4 items-center justify-center rounded-4xl border-2 border-default-color px-3 py-4 sm:py-4 lg:px-6 lg:py-4 hover:border-text-primary-color transition-all duration-200 ease-in-out"
-                       >
-                         <span className="text-default-color text-base lg:text-xl font-outfit font-light">
-                            Explore Our Work
-                         </span>
-                         <GotoSvg className="w-5 h-5 text-white" />
-                       </Link>
+              to="/our-work"
+              className="w-max flex flex-row gap-2 lg:gap-4 items-center justify-center rounded-4xl border-2 border-default-color px-3 py-4 sm:py-4 lg:px-6 lg:py-4 hover:border-text-primary-color transition-all duration-200 ease-in-out"
+            >
+              <span className="text-default-color text-base lg:text-xl font-outfit font-light">
+                Explore Our Work
+              </span>
+              <GotoSvg className="w-5 h-5 text-white" />
+            </Link>
           </div>
-        </div>\
+        </div>
+        \
       </div>
     </WidthWrapper>
   );
