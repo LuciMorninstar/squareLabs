@@ -62,7 +62,7 @@ const EPlatformRedesign = () => {
     <WidthWrapper>
       <div
         ref={heroRef}
-        className="relative w-full max-lg:min-h-screen lg:h-[calc(100vh-40px)] overflow-hidden flex flex-col-reverse gap-8 items-center justify-center lg:flex-row lg:rounded-4xl py-10 lg:py-0 inset-0 bg-gradient-background"
+        className="relative w-full max-lg:min-h-screen lg:h-[calc(100vh-40px)] overflow-hidden flex flex-col-reverse gap-8 items-center justify-center lg:flex-row  py-10 lg:py-0 inset-0 bg-gradient-background"
       >
       
 
