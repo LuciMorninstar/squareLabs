@@ -7,11 +7,14 @@ import NotFoundPage from './pages/NotFoundPage'
 import WhatWeDoPage from './pages/WhatWeDoPage'
 import WhoWeArePage from './pages/WhoWeArePage'
 import OurWorkPage from './pages/OurWorkPage'
+import CursorGlow from './components/CursorGlow'
 
+import Resource from './pages/Resource'
 const App = () => {
   return (
 
     <Router>
+      <CursorGlow/>
       <Routes>
         <Route path ="/" element = {<MainLayout/>}>
         <Route index element = {<HomePage/>}/>
@@ -20,7 +23,7 @@ const App = () => {
         <Route path="/what-we-do" element={<WhatWeDoPage/>}/>
         <Route path="/who-we-are" element={<WhoWeArePage/>}/>
         <Route path="/our-work" element={<OurWorkPage/>}/>
-
+         <Route path="/resources" element={<Resource />} />
         
         </Route>
          <Route path="*" element={<NotFoundPage/>}/>

@@ -2,10 +2,8 @@ import { useRef, useEffect } from "react";
 import WidthWrapper from "./WidthWrapper";
 import squarelabslogo from "../assets/squarelabslogo.png";
 import { Link } from "react-router";
-import insta from "../assets/footer/insta.svg?react";
-import facebook from "../assets/footer/facebook.svg?react";
-import twitter from "../assets/footer/twitter.svg?react";
-import linkedIn from "../assets/footer/linkedIn.svg?react";
+import { footerLinks, socialLinks } from "../constants/footerLinks.js";
+
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -36,57 +34,13 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
-  const footerLinks = [
-    {
-      title: "Company",
-      links: [
-        { name: "About Us", url: "/about-us" },
-        { name: "Career", url: "/career" },
-        { name: "Meet the Team", url: "/meet-the-team" },
-        { name: "Partners", url: "/partners" },
-      ],
-    },
-    {
-      title: "Services",
-      links: [
-        { name: "Digital Products", url: "/digital-products" },
-        { name: "Growth & Branding", url: "/growth-and-branding" },
-        { name: "Strategies", url: "/strategies" },
-        { name: "Technology", url: "/technology" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Blogs & Insights", url: "/blogs-and-insights" },
-        { name: "Case Studies", url: "/case-studies" },
-        { name: "Tutorials", url: "/tutorials" },
-        { name: "Academy", url: "/academy" },
-      ],
-    },
-    {
-      title: "General",
-      links: [
-        { name: "Home", url: "/" },
-        { name: "What We Do", url: "/what-we-do" },
-        { name: "Who We Are", url: "/who-we-are" },
-        { name: "Our Works", url: "/our-works" },
-      ],
-    },
-  ];
 
-  const socialLinks = [
-    { name: "facebook", icon: facebook, href: "/facebook" },
-    { name: "insta", icon: insta, href: "/insta" },
-    { name: "x", icon: twitter, href: "/x" },
-    { name: "linkedIn", icon: linkedIn, href: "/linkedIn" },
-  ];
 
   return (
     <WidthWrapper>
       <div
         ref={footerRef}
-        className="py-16 px-6 lg:px-16 w-full bg-footer-background-color xl:rounded-4xl flex flex-col gap-8 lg:gap-24"
+        className="py-16 px-6 lg:px-16 w-full bg-footer-background-color  flex flex-col gap-8 lg:gap-24"
       >
         {/* top part */}
         <div className="flex flex-col-reverse xl:flex-row gap-4 lg:flex-row lg:justify-between items-center">

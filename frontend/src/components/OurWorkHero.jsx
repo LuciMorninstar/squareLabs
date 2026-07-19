@@ -66,16 +66,9 @@ const OurWorkHero = () => {
     <WidthWrapper>
       <div
         ref={heroRef}
-        className="relative w-full h-[calc(100dvh-60px)] lg:h-[calc(100vh-110px)] overflow-hidden flex flex-col lg:flex-row lg:rounded-4xl py-10 lg:py-0"
+        className="hero-section relative w-full overflow-hidden flex flex-col lg:flex-row  py-10 lg:py-0 inset-0 bg-gradient-background"
       >
-        {/* base gradient background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(120% 90% at 50% 0%, rgba(15,157,69,0.18) 0%, rgba(7,21,16,0) 55%), linear-gradient(180deg, #081B13 0%, #071510 60%, #050F0B 100%)",
-          }}
-        />
+     
 
         {/* cursor-follow spotlight */}
         <div

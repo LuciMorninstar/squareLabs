@@ -6,7 +6,7 @@ const WhatWeDoCards = ({ item, bgColor }) => {
     <div
     id={item?.id}
       style={{ backgroundColor: bgColor }}
-      className={`${bgColor} h-[100dvh] xl:h-screen  pt-12 scroll-mt-12 lg:scroll-mt-22`}
+      className={`${bgColor} min-h-screen xl:h-screen  pt-12 scroll-mt-12 lg:scroll-mt-22`}
     >
       <SecondWidthWrapper>
         <div className="flex flex-col gap-12 xl:gap-16">

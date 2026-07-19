@@ -43,15 +43,15 @@ const Glimpses = () => {
         className=" w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 "
       >
         {/* left side */}
-        <div className="w-full  flex flex-col justify-center gap-2 lg:gap-4 lg:p-0">
-          <h1 data-animate className="text-text-quarternary-color">
+        <div className="w-full  flex flex-col justify-center  gap-2 lg:gap-4 lg:p-0">
+          <h1 data-animate className="text-text-quarternary-color ">
             Catch the glimpses of <br />{" "}
             <span className="top-bottom-gradient">Life At SquareLabs</span>
           </h1>
 
           <p
             data-animate
-            className="text-text-secondary-color text-base md:text-lg lg:text-lg text-justify"
+            className="text-text-secondary-color text-base md:text-lg lg:text-lg "
           >
             At SquareLabs, work is more than just work - it's a thrilling
             adventure filled with laughter, camaraderie, and endless support.

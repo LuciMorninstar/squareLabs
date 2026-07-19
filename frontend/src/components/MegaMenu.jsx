@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { IoArrowForward } from "react-icons/io5";
 
-const MegaMenu = ({ visible, categories }) => {
+const MegaMenu = ({ visible, categories, onClose }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (!visible) return;
+
+    const handleScroll = () => {
+      onClose?.();
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [visible, onClose]);
 
   if (!categories) return null;
 

@@ -151,7 +151,7 @@ const WhatWeDoHero = () => {
     <WidthWrapper>
       <div
         ref={heroRef}
-        className="relative w-full h-[calc(100dvh-60px)] lg:h-[calc(100vh-185px)] overflow-hidden flex items-center justify-center lg:rounded-4xl"
+        className="hero-section relative w-full overflow-hidden flex items-center justify-center "
       >
         {/* Green Overlay */}
         <div className="absolute inset-0 bg-[#06150D]/45 z-10"></div>
